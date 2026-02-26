@@ -2,9 +2,56 @@
 
 <section class="ui left aligned middle aligned segment">
   
-    <h2>Playlist App Dashboard</h2>
-      <p>
-        Playlists will be displayed here
-      </p>
+  <h2>Playlist App Dashboard</h2>
+
+  {{else}}
+    <h3 class="ui message">
+        Empty playlist!
+    </h3>
+
+
+  {{#each playlists}}
+  
+    <section class="ui left aligned middle aligned scrolling segment">
+
+      <h3 class="ui header">
+        {{title}}
+      </h3>      
+  
+      {{#if songs}}
+      
+    <table class="ui unstackable striped table">
+        <thead>
+            <tr>
+              <th>Song</th>
+              <th>Artist</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each songs}}
+              <tr>
+                <td>
+                  {{title}}
+                </td>
+                <td>
+                  {{artist}}
+                </td>
+              </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    {{else}}
+    <h3 class="ui message">
+        Empty playlist!
+    </h3>
+
+      
+{{/if}}
+
+      
+    </section>
+  
+  {{/each}}
 
 </section>
